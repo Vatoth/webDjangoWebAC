@@ -21,8 +21,11 @@ from .view import *
 
 router = routers.DefaultRouter()
 router.register('user', UserViewSet)
+router.register('project', ProjectViewSet)
+router.register('skill', SkillViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
+    path('user/<int:id>/skills', UserList.as_view(),name='user-list'),
 ]
