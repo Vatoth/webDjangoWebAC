@@ -25,5 +25,5 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         """Meta class to map serializer's fields with the model fields."""
         model = Project
-        fields = ('name', 'descriptive',
-                  'id')
+        fields = ('languages', 'name', 'descriptive', 'links',
+                  'id', 'userId')

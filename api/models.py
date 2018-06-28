@@ -28,9 +28,12 @@ class Skill(models.Model):
         return "{}".format(self.name)
 
 class Project(models.Model):
-    """This class represents the bucketlist model."""
+    """This class repxresents the bucketlist model."""
+    languages = models.TextField()
     name = models.CharField(max_length=255, blank=False)
     descriptive = models.TextField()
+    userId = models.IntegerField()
+    links = models.TextField()
 
     def __str__(self):
         """Return a human readable representation of the model instance."""
