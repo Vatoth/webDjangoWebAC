@@ -27,5 +27,8 @@ router.register('skill', SkillViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('user/<int:id>/skills', UserList.as_view(),name='user-list'),
+    path('user/<int:id>/skill', UserList.as_view(),name='user-list'),
+    path('user/skill/<str:type>', UserListByType.as_view(),name='userbyType-list'),
+    path('user/skill/<str:type>/<str:note>',
+         UserListByTypeAndNote.as_view(),name='userbyTypeAndNote-list'),
 ]
